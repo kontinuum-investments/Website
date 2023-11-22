@@ -2,5 +2,7 @@ FROM node:latest
 EXPOSE 443
 COPY . .
 WORKDIR .
-RUN chmod +x /startup.sh
-ENTRYPOINT ["/startup.sh"]
+RUN npm i --omit dev
+RUN npm run build
+RUN npm i --omit dev
+ENTRYPOINT ["PORT=443", "node", "build"]
