@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   Build-and-Deploy:
-    needs: Validate
     runs-on: ubuntu-latest
     environment: Production
     permissions:
