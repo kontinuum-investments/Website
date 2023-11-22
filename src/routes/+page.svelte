@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div style='padding-top: 5rem'>
+    <img style='width: 50rem; height: auto' src='https://kihstorageaccount.blob.core.windows.net/public/logo.png'
+         alt='Kontinuum Investment Holdings Logo' />
+</div>
+
+<div style='padding-top: 3rem;'>
+    <p style='font-size: 1.5rem;'>A Private Investment Holding Company</p>
+    <p style='padding-top: 0.75rem; font-size: 1rem;'><a href='mailto:info@kih.com.sg'>info@kih.com.sg</a></p>
+</div>
+
+<div class="footer">
+    <p style='font-size: 1rem;'>© Kontinuum Investment Holdings {new Date().getFullYear()}</p>
+</div>  
