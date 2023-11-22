@@ -6,7 +6,7 @@
     onMount(() => {
         let url = window.location.hostname;
         let parts = url.split('.');
-        topLevelDomain = parts[parts.length - 1] + '.' + parts[parts.length - 2];
+        topLevelDomain = parts[parts.length - 2] + '.' + parts[parts.length - 1];
     });
 </script>
 
