@@ -2,11 +2,13 @@
     import {onMount} from 'svelte';
 
     let topLevelDomain: string = "";
+    let country: string = "";
 
     onMount(() => {
         let url = window.location.hostname;
         let parts = url.split('.');
         topLevelDomain = parts[parts.length - 2] + '.' + parts[parts.length - 1];
+        country = topLevelDomain === "co.nz" ? "New Zealand" : "Singapore";
     });
 </script>
 
@@ -22,5 +24,5 @@
 </div>
 
 <div class="footer">
-    <p style='font-size: 1rem;'>© Kontinuum Investment Holdings {new Date().getFullYear()}</p>
+    <p style='font-size: 1rem;'>© Kontinuum Investment Holdings {country} {new Date().getFullYear()}</p>
 </div>  
