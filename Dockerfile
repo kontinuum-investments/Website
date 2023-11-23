@@ -5,4 +5,4 @@ WORKDIR .
 RUN npm i --omit dev
 RUN npm run build
 RUN npm i --omit dev
-ENTRYPOINT ["PORT=443", "node", "build"]
+ENTRYPOINT ["./startup.sh"]
