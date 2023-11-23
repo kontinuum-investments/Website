@@ -37,3 +37,9 @@ jobs:
           resourceGroup: ${{ vars.AZURE_RESOURCE_GROUP_NAME }}
           imageToBuild: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}:latest
           environmentVariables: ENVIRONMENT=${{ vars.ENVIRONMENT }}
+
+      - name: Restart Revision
+        shell: bash
+        run: |
+          export REVISION_NAME=$(az containerapp revision list --name ${{ vars.AZURE_CONTAINER_APP_NAME }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP_NAME }} --query "[0].name")
+          az containerapp revision restart --revision "${REVISION_NAME//\"/}" --resource-group ${{ vars.AZURE_RESOURCE_GROUP_NAME }}
