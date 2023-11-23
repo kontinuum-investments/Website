@@ -19,3 +19,14 @@ a {
     bottom: 0;
     width: 100%;
 }
+
+#line {
+    border-image: linear-gradient(to right, #937100 0%, transparent 25%, transparent 75%, #937100 100%);
+    border-image-slice: 1;
+    border-top: .1rem solid #937100;
+    position: relative;
+    transform: translateY(2.5rem);
+    margin-left: auto;
+    margin-right: auto;
+    width: 50rem;
+}

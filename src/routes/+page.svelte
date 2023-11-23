@@ -18,8 +18,9 @@
 </div>
 
 <div style='padding-top: 3rem;'>
+    <div id="line"></div>
     <p style='font-size: 1.5rem;'>A Private Investment Holding Company</p>
-    <p style='padding-top: 0.75rem; font-size: 1rem;'><a
+    <p style='font-style: italic; padding-top: 0.5rem; font-size: 1rem;'><a
             href='mailto:info@kih.{topLevelDomain}'>info@kih.{topLevelDomain}</a></p>
 </div>
 
