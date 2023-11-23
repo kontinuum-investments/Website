@@ -2,6 +2,11 @@
     import '../lib/app.css';
 </script>
 
+<svelte:head>
+    <link href="https://kihstorageaccount.blob.core.windows.net/public/icon.svg" rel="icon" type="image/svg"/>
+    <title>Kontinuum Investment Holdings</title>
+</svelte:head>
+
 <div class="slot">
     <slot/>
 </div>
