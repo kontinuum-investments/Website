@@ -27,6 +27,5 @@ RUN chmod +x scripts/startup.sh
 
 #   Startup
 USER $USERNAME
-ENTRYPOINT nohup sudo apt-get update -y >> update.log && sudo apt-get upgrade -y >> update.log \
-            & nohup scripts/startup.sh >> server.log \
+ENTRYPOINT nohup scripts/startup.sh >> server.log \
             & tail -f server.log
