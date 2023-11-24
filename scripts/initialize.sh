@@ -13,3 +13,7 @@ apt install -y nodejs
 ##  Install packages
 npm i --omit dev
 npm run build
+
+# Allowing port 443 access
+apt-get install -y libcap2-bin
+setcap cap_net_bind_service=+ep `readlink -f \`which node\``

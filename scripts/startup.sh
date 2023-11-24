@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export PORT=5000
+export PORT=443
 node build
