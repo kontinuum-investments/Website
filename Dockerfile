@@ -3,7 +3,6 @@ FROM ubuntu:latest
 #   Environmental Variables
 ENV USERNAME=app
 ENV WORKDIR=/home/$USERNAME
-EXPOSE 443
 
 
 #   Initialize the container
