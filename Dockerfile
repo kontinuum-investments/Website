@@ -27,5 +27,4 @@ RUN chmod +x scripts/startup.sh
 
 #   Startup
 USER $USERNAME
-ENTRYPOINT nohup scripts/startup.sh >> server.log \
-            & tail -f server.log
+ENTRYPOINT nohup scripts/startup.sh >> server.log & tail -f server.log
