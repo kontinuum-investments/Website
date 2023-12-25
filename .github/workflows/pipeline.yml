@@ -36,7 +36,7 @@ jobs:
           containerAppName: ${{ vars.AZURE_CONTAINER_APP_NAME }}
           resourceGroup: ${{ vars.AZURE_RESOURCE_GROUP_NAME }}
           imageToBuild: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}:latest
-          environmentVariables: ENVIRONMENT=${{ vars.ENVIRONMENT }}
+          environmentVariables: ENVIRONMENT=${{ vars.ENVIRONMENT }} CLOUDFLARE_TUNNEL_TOKEN=${{ secrets.CLOUDFLARE_TUNNEL_TOKEN }}
 
       - name: Restart Revision
         shell: bash
