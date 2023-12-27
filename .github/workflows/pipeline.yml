@@ -1,3 +1,5 @@
+name: ${{ inputs.message || "Deploy to the Citadel" }}
+
 on:
   push:
     branches:
@@ -8,8 +10,6 @@ on:
         description: 'The message of the Workflow Run'
         required: true
         type: string
-
-name: ${{ inputs.message }}
 
 jobs:
   Push_to_Docker_Hub:
