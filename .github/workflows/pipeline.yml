@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
-      - name: Check out the repo
+      - name: Check out the repository
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
@@ -28,6 +28,18 @@ jobs:
     name: Deploy to the Citadel
     runs-on: ubuntu-latest
     environment: Production
+    needs: Push_to_Docker_Hub
     steps:
-      - name: "Execute the deployment script"
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Execute the deployment script
+        env:
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          DOCKERHUB_REPOSITORY: ${{ vars.DOCKERHUB_REPOSITORY }}
+          CONTAINER_PORT: ${{ vars.CONTAINER_PORT }}
+          HOST_PORT: ${{ vars.HOST_PORT }}
+          CITADEL_SSH_PRIVATE_KEY: ${{ secrets.CITADEL_SSH_PRIVATE_KEY }}
+          CITADEL_USERNAME: ${{ vars.CITADEL_USERNAME }}
+          CITADEL_HOST_NAME: ${{ vars.CITADEL_HOST_NAME }}
         run: chmod +x scripts/deploy.sh && ./scripts/deploy.sh
