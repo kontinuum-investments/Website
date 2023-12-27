@@ -2,6 +2,7 @@ on:
   push:
     branches:
       [ production ]
+  repository_dispatch:
 
 jobs:
   Push_to_Docker_Hub:
