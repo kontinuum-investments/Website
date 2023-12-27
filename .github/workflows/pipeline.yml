@@ -1,4 +1,4 @@
-name: ${{ github.event.inputs.message }}
+name: ${{ inputs.message }}
 
 on:
   push:
