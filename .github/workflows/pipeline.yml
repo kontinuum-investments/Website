@@ -1,4 +1,4 @@
-name: ${{ inputs.message }}
+run-name: ${{ inputs.message }}
 
 on:
   push:
