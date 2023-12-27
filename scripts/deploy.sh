@@ -4,8 +4,7 @@
 ENV_VARS=""
 
 # Set the command to start the microservice
-command="sudo apt install curl -y && \
-  source <(curl -s https://raw.githubusercontent.com/kontinuum-investments/Citadel/production/misson_control/scripts/library.sh) && \
+command="source <(curl -s https://raw.githubusercontent.com/kontinuum-investments/Citadel/production/misson_control/scripts/library.sh) && \
   deploy_container $DOCKERHUB_USERNAME/$DOCKERHUB_REPOSITORY:latest $CONTAINER_PORT $HOST_PORT $ENV_VARS"
 
 # SSH into the Citadel
