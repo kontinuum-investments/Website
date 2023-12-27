@@ -12,4 +12,4 @@ command="sudo apt install curl -y && \
 temp_key_file=$(mktemp)
 echo "$CITADEL_SSH_PRIVATE_KEY" > "$temp_key_file"
 chmod 400 "$temp_key_file"
-ssh -i "$temp_key_file" "$CITADEL_USERNAME"@"$CITADEL_HOST_NAME" "$command"
+ssh -o StrictHostKeyChecking=no -i "$temp_key_file" "$CITADEL_USERNAME"@"$CITADEL_HOST_NAME" "$command"
