@@ -3,17 +3,12 @@ on:
     branches:
       [ production ]
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run the workflow against'
-        type: environment
-        required: true
 
 jobs:
   Push_to_Docker_Hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-    environment: ${{ (github.ref == 'refs/heads/production' || inputs.environment == 'production') && 'production' || 'test' }}
+    environment: ${{ github.ref == 'refs/heads/production' && 'production' || 'test' }}
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
