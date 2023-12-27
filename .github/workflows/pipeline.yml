@@ -1,4 +1,4 @@
-name: "Deploy to the Citadel"
+name: ${{ github.event.inputs.message }}
 
 on:
   push:
@@ -14,7 +14,6 @@ on:
 jobs:
   Push_to_Docker_Hub:
     name: Push Docker image to Docker Hub
-    run-name: My Workflow Run
     runs-on: ubuntu-latest
     environment: ${{ github.ref == 'refs/heads/production' && 'production' || 'test' }}
     steps:
