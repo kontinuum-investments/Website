@@ -4,7 +4,7 @@ on:
       [ production ]
 
 jobs:
-  push_to_registry:
+  Push_to_Docker_Hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     environment: Production
@@ -23,3 +23,11 @@ jobs:
         with:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}:latest
+
+  Deploy_to_the_Citadel:
+    name: Deploy to the Citadel
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: "Execute the deployment script"
+        run: chmod +x scripts/deploy.sh && ./scripts/deploy.sh
