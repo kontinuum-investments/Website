@@ -1,4 +1,4 @@
-name: ${{ inputs.message || "Deploy to the Citadel" }}
+name: "Deploy to the Citadel"
 
 on:
   push:
