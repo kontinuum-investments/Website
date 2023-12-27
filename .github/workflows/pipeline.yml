@@ -1,8 +1,15 @@
+name: ${{ inputs.message }}
+
 on:
   push:
     branches:
       [ production ]
   workflow_dispatch:
+    inputs:
+      message:
+        description: 'The message of the Workflow Run'
+        required: true
+        type: string
 
 jobs:
   Push_to_Docker_Hub:
