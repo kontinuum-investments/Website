@@ -50,5 +50,5 @@ jobs:
           CITADEL_SSH_PRIVATE_KEY: ${{ github.ref == 'refs/heads/production' && secrets.CITADEL_SSH_PRIVATE_KEY || secrets.CITADEL_TEST_SSH_PRIVATE_KEY }}
           CITADEL_USERNAME: ${{ vars.CITADEL_USERNAME }}
           CITADEL_HOST_NAME: ${{ github.ref == 'refs/heads/production' && vars.CITADEL_HOST_NAME || vars.CITADEL_TEST_HOST_NAME }}
-          BRANCH_NAME: ${{ github.ref#refs/heads/ }}
+          ENVIRONMENT: ${{ github.ref == 'refs/heads/production' && 'Production' || 'Test' }}
         run: chmod +x scripts/deploy.sh && ./scripts/deploy.sh
