@@ -2,6 +2,12 @@
 
 # Set the environmental variables
 ENV_VARS=""
+if [ "$BRANCH_NAME" = "production" ]
+then
+    ENV_VARS="ENVIRONMENT=Production"
+else
+    ENV_VARS="ENVIRONMENT=Test"
+fi
 
 # Set the command to start the microservice
 command="source <(curl -s https://raw.githubusercontent.com/kontinuum-investments/Central-Finite-Curve/production/citadel/scripts/library.sh) && \

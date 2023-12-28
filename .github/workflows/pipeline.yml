@@ -3,7 +3,7 @@ run-name: ${{ inputs.message }}
 on:
   push:
     branches:
-      [ production ]
+      [ production, development ]
   workflow_dispatch:
     inputs:
       message:
@@ -50,4 +50,5 @@ jobs:
           CITADEL_SSH_PRIVATE_KEY: ${{ secrets.CITADEL_SSH_PRIVATE_KEY }}
           CITADEL_USERNAME: ${{ vars.CITADEL_USERNAME }}
           CITADEL_HOST_NAME: ${{ vars.CITADEL_HOST_NAME }}
+          BRANCH_NAME: ${{ github.ref#refs/heads/ }}
         run: chmod +x scripts/deploy.sh && ./scripts/deploy.sh
